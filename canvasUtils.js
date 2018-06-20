@@ -85,6 +85,23 @@ function createFinalImage() {
 //    e.click();
 //    document.body.removeChild(e);
 //    var e = document.createElement('a');
+	//////
+	
+	//Code original que j'essaie de bidouiller 
+	// Chart1 est l'objet de ce code
+	//CanvastoSVG est dans le fichier TestCanvastosvg.js qui n'est pas rapellé ici mais dans l'index html
+	// TargetSVG n'a pas l'air d'être dans aucun de ces deux fichiers
+	//// *deja com* Create image of chart1
+	////				var img = chart1.canvas.toDataURL("image/png");
+	////				// Add link to download image
+	////				document.getElementById('export').href = img;
+	////				
+	////				var targetSVG = document.getElementById('svg');
+	////				CanvasToSVG.convert(chart1.canvas, targetSVG);
+	////				document.getElementById('export').href = targetSVG.firstChild.imageData;
+	////				var s = document.getElementById('2');
+	////				document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
+//	////*deja comm*				alert(svgToString(s.childNodes[1], 0));
 	
 	//test pour transformer en fichier svg
     e.href = canvas.toDataURL("image/png");
