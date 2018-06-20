@@ -79,12 +79,18 @@ function createFinalImage() {
     redraw();
 
     var e = document.createElement('a');
-    e.href = canvas.toDataURL();
-    e.download = 'gallifreyan.svg';
-    document.body.appendChild(e);
-    e.click();
-    document.body.removeChild(e);
+    e.href = canvas.toDataURL("image/png");
 
+
+
+					
+	var targetSVG = document.getElementById('svg');
+	CanvasToSVG.convert(canvas, targetSVG);
+	document.getElementById('export').href = targetSVG.firstChild.imageData;
+	var s = document.getElementById('2');
+	document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
+//					alert(svgToString(s.childNodes[1], 0));
+    
     dirtyRender = 1;
     redraw();
     return;
