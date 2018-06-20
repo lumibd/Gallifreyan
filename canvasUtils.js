@@ -80,7 +80,7 @@ function createFinalImage() {
 
     var e = document.createElement('a');
     e.href = canvas.toDataURL();
-    e.download = 'gallifreyan.png';
+    e.download = 'gallifreyan.svg';
     document.body.appendChild(e);
     e.click();
     document.body.removeChild(e);
