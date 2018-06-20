@@ -77,8 +77,16 @@ $(document).on("contextmenu", "canvas", function(e) {
 function createFinalImage() {
     dirtyRender = 0;
     redraw();
-
-    var e = document.createElement('a');
+// Ancien code pour créer png
+//	var e = document.createElement('a');
+//    e.href = canvas.toDataURL();
+//    e.download = 'gallifreyan.png';
+//    document.body.appendChild(e);
+//    e.click();
+//    document.body.removeChild(e);
+//    var e = document.createElement('a');
+	
+	//test pour transformer en fichier svg
     e.href = canvas.toDataURL("image/png");
 
 
@@ -91,6 +99,10 @@ function createFinalImage() {
 	document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
 //					alert(svgToString(s.childNodes[1], 0));
     
+	
+	//fin du test 
+	
+	
     dirtyRender = 1;
     redraw();
     return;
