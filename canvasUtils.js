@@ -19,7 +19,8 @@ function prepareCanvas() {
     canvas.setAttribute('height', canvasSize);
     canvas.style.width = "800px";
     canvas.style.height = "800px";
-    ctx = canvas.getContext("2d");
+    ctx = new C2S(800,800);
+    // ctx = canvas.getContext("2d");
 
     ctx.lineCap = 'round';
 
@@ -101,22 +102,22 @@ function createFinalImage() {
 	////				document.getElementById('export').href = targetSVG.firstChild.imageData;
 	////				var s = document.getElementById('2');
 	////				document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
-//	////*deja comm*				alert(svgToString(s.childNodes[1], 0));
+        //////*deja comm*				alert(svgToString(s.childNodes[1], 0));
 	
 	//test pour transformer en fichier svg
-    e.href = canvas.toDataURL("image/png");
+    //e.href = canvas.toDataURL("image/png");
 
 
 
 					
-	var targetSVG = document.getElementById('svg');
-	CanvasToSVG.convert(canvas, targetSVG);
+	//var targetSVG = document.getElementById('svg');
+	//CanvasToSVG.convert(canvas, targetSVG);
 	document.getElementById('export').href = targetSVG.firstChild.imageData;
-	var s = document.getElementById('2');
-	document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
+	//var s = document.getElementById('2');
+	//document.getElementById('svgcode').value = "<!-- Copy the contents of this box into a text editor, then save the file with a .svg extension.-->\n\n\n" +  svgToString(targetSVG);
 //					alert(svgToString(s.childNodes[1], 0));
     
-	
+	var svg = ctx.getSvg();
 	//fin du test 
 	
 	
